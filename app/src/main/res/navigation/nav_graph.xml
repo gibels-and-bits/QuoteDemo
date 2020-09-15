@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+  <fragment
+      android:id="@+id/loginFragment"
+      android:name="com.groupon.quotedemo.login.view.LoginFragment"
+      android:label="fragment_login"
+      tools:layout="@layout/fragment_login" >
+    <action
+        android:id="@+id/action_login_to_quote_list"
+        app:destination="@id/quoteListFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/quoteListFragment"
+      android:name="com.groupon.quotedemo.quote_list.view.QuoteListFragment"
+      android:label="fragment_quote_list">
+    <action
+        android:id="@+id/action_quote_list_to_detail"
+        app:destination="@id/quoteDetailFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/quoteDetailFragment"
+      android:name="com.groupon.quotedemo.quote_details.view.QuoteDetailFragment"
+      android:label="QuoteDetailFragment" >
+    <argument
+        android:name="authorName"
+        app:argType="string" />
+    <argument
+        android:name="quote"
+        app:argType="string" />
+  </fragment>
+</navigation>
